@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Josefin+Sans:wght@400;700&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@200;400;500;600;700&display=swap");
 @font-face {
     font-family: "Ethnocentric";
-    src: url("/assets/font/ethnocentric\ rg.otf");
+    src: url("../../assets/font/ethnocentric\ rg.otf");
 }
 
 /*==================== VARIABLES CSS ====================*/
@@ -374,7 +374,7 @@ img {
 
 .home-content {
     padding: 2.15rem 0;
-    background-image: url("/assets/svg/Group\ 834.svg");
+    background-image: url("../../assets/svg/bg01.svg");
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -398,7 +398,7 @@ img {
     justify-content: center;
     align-items: center;
 
-    background-image: url("/assets/svg/pattern\ 1.svg");
+    background-image: url("../../assets/svg/bg02.svg");
     background-position: center;
     background-size: 20rem;
     background-repeat: no-repeat;
@@ -1119,6 +1119,11 @@ img {
 
 .footer-item-subitem {
     color: var(--text-color);
+    transition: 0.3s;
+}
+
+.footer-item-subitem:hover {
+    color: var(--white-color);
 }
 
 .footer-sosmed {
@@ -1225,6 +1230,7 @@ img {
     font-weight: var(--font-semi-bold);
     text-align: center;
     line-height: 1rem;
+    transition: 0.1s;
 }
 
 .contest-home-subtitle {
@@ -1247,9 +1253,17 @@ img {
     gap: 1rem;
 }
 
+.contest-home-btn:hover {
+    background-color: var(--first-color-alt);
+}
+
 .contest-home-btn-second {
     color: var(--first-color);
     background-color: var(--white-color);
+}
+
+.contest-home-btn-second:hover {
+    background-color: rgb(217, 230, 251);
 }
 
 .contest-home-cover {
