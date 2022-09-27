@@ -164,8 +164,16 @@ img {
     text-align: center;
 }
 
+.d-none {
+    display: none;
+}
+
 .z-top {
     z-index: 10;
+}
+
+.justify-text {
+    text-align: justify;
 }
 
 /*==================== LAYOUT ====================*/
@@ -391,6 +399,7 @@ img {
     justify-content: center;
     align-items: center;
     row-gap: 3rem;
+    margin: 0 1rem;
 }
 
 .home-img {
@@ -446,25 +455,25 @@ img {
 
 @keyframes logo-animate-before {
     0% {
-        transform: scale(1);
+        transform: scale(1) rotate(0);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.2) rotate(20deg);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1) rotate(0);
     }
 }
 
-.home-img:hover::before {
-    rotate: 20deg;
-    scale: 0.9;
-}
-
-.home-image:hover {
+/* .home-image:hover {
     scale: 1.2;
     rotate: 8deg;
-}
+} */
+
+/* .home-image:hover .home-img::before {
+    rotate: 20deg;
+    scale: 0.9;
+} */
 
 @keyframes logo-animate-after {
     0% {
@@ -484,6 +493,7 @@ img {
     display: flex;
     flex-direction: column;
     row-gap: 0.2rem;
+    margin: 0 1rem;
 }
 
 .home-title,
@@ -607,6 +617,7 @@ img {
     .home-img::before {
         width: 200px;
         height: 200px;
+
         animation-name: logo-animate-before;
         animation-duration: 10s;
         animation-iteration-count: infinite;
@@ -703,6 +714,9 @@ img {
 }
 
 @media screen and (min-width: 948px) {
+    .falcontalks {
+        padding-top: 3.5rem;
+    }
     .falcontalks-content {
         flex-direction: row;
         justify-content: space-between;
@@ -730,65 +744,80 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     row-gap: 2rem;
 }
 
 .competition-data {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    /* justify-content: center;
+    align-items: center; */
     row-gap: 1rem;
+    /* justify-items: center; */
+}
+
+.competition-title {
+    width: 100%;
+    text-align: center;
 }
 
 .competition-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.25rem;
 }
 
 .competition-item-wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem 2rem;
-    background-color: var(--body-color);
+    background: linear-gradient(
+        -15deg,
+        var(--body-color),
+        var(--first-color-second) 80%
+    );
     border-radius: 2rem;
     row-gap: 1rem;
-    height: 100%;
-    /* box-shadow: 0 2px 1px 0 var(--first-color); */
+    transition: 0.3s;
+    text-align: center;
+    /* transition: background 1s ease-out; */
 }
 
+.competition-item-wrapper:hover {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    background: var(--body-color);
+}
+
+/* .competition-item-wrapper:hover .competition-item-desc {
+    color: var(--first-color);
+} */
+
 .competition-item-img {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(255, 255, 255);
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .competition-item-img img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
 .competition-item-title {
-    font-size: var(--normal-font-size);
-    color: var(--white-color);
-    font-weight: var(--font-semi-bold);
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    font-weight: var(--font-bold);
 }
 
 .competition-item-desc {
-    font-size: var(--smaller-font-size);
+    font-size: var(--small-font-size);
     color: var(--text-color);
     text-align: center;
 }
@@ -833,6 +862,7 @@ img {
 @media screen and (min-width: 968px) {
     .competition {
         position: relative;
+        padding-top: 3rem;
     }
     .competition-content,
     .competition-data {
@@ -846,12 +876,7 @@ img {
         padding: 4rem;
     }
     .competition-list {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        column-gap: 2rem;
+        grid-template-columns: auto auto;
     }
     .competition-item-wrapper {
         text-align: center;
@@ -956,6 +981,10 @@ img {
     z-index: 1;
     /* left: calc(50%-4px); */
     top: 0;
+}
+
+.timeline-desc {
+    color: var(--first-color-lighter);
 }
 
 @media screen and (min-width: 968px) {
@@ -1141,6 +1170,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--white-color);
 }
 
 .footer-icon-wrapper:hover {
@@ -1175,7 +1205,7 @@ img {
     }
     .footer-sosmed {
         justify-content: flex-end;
-        column-gap: 3rem;
+        gap: 3rem;
     }
 }
 
@@ -1194,6 +1224,14 @@ img {
 }
 
 /* ==================next============= */
+
+.box-container-contest {
+    background: linear-gradient(
+        0deg,
+        var(--first-color-second),
+        var(--body-color) 70%
+    );
+}
 
 .contest-home-data-wrapper {
     display: grid;
@@ -1401,8 +1439,8 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
-    padding: 1rem;
+    /* gap: 2rem;
+    padding: 1rem; */
     border-radius: 1rem;
     font-family: var(--number-font);
     cursor: pointer;
@@ -1419,9 +1457,10 @@ img {
     background-color: rgba(255, 255, 255, 0.317);
     border-radius: 1rem;
     /* height: 100%; */
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
     flex: 1/6;
+    transform: scale(0.7);
 }
 
 .prizepool-number {
@@ -1441,7 +1480,7 @@ img {
     justify-content: center;
     align-items: center;
 
-    font-size: 1.15rem;
+    font-size: 0.815rem;
     padding-right: 5%;
 }
 
@@ -1469,8 +1508,17 @@ img {
     .prizepool-main {
         padding: 0 7rem;
     }
+    .prizepool-item {
+        gap: 2rem;
+        padding: 1rem;
+    }
     .prizepool-item-list {
         gap: 1.25rem;
+    }
+    .prizepool-number-wrapper {
+        height: 100%;
+        width: 100px;
+        transform: scale(1);
     }
     .prizepool-number,
     .prizepool-prize {
